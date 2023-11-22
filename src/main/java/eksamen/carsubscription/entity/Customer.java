@@ -1,63 +1,60 @@
 package eksamen.carsubscription.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long kundeID;
 
-    private String name;
+    private String navn;
 
-    private String address;
+    private String adresse;
 
-    private String phoneNumber;
+    private String telefon;
 
-    private String eMail;
+    private String email;
 
     public Customer() {
     }
 
-    public Customer(String name, String address, String phoneNumber, String eMail) {
-        this.name = name;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.eMail = eMail;
+    public Customer(String navn, String adresse, String telefon, String email) {
+        this.navn = navn;
+        this.adresse = adresse;
+        this.telefon = telefon;
+        this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getNavn() {
+        return navn;
     }
 
-    public String getAddress() {
-        return address;
+    public void setNavn(String navn) {
+        this.navn = navn;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public String geteMail() {
-        return eMail;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getTelefon() {
+        return telefon;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public String getEmail() {
+        return email;
     }
 
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
