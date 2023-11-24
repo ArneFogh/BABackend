@@ -7,44 +7,44 @@ import jakarta.persistence.*;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bilId;
+    private Long carId;
 
     @Column(nullable = false)
-    private String bilmaerke;
+    private String carBrand;
 
     private String model; //
 
     @Column(nullable = false)
-    private String registreringsnummer;
+    private String licensePlate;
 
     @Column(nullable = false)
-    private Double indkoebspris;
+    private Double Price;
 
     @Column(nullable = false)
-    private String braendstof;
+    private String Fuel;
 
     @Column(nullable = false)
-    private Integer koertKmVedAbonnemtStart;
+    private Integer drivenKilometersAtSubscriptionStart;
 
 
     public Car() {
     }
 
-    public Car(String bilmaerke, String model, String registreringsnummer, Double indkoebspris, String braendstof, Integer koertKmVedAbonnemtStart) {
-        this.bilmaerke = bilmaerke;
+    public Car(String carBrand, String model, String licensePlate, Double price, String fuel, Integer drivenKilometersAtSubscriptionStart) {
+        this.carBrand = carBrand;
         this.model = model;
-        this.registreringsnummer = registreringsnummer;
-        this.indkoebspris = indkoebspris;
-        this.braendstof = braendstof;
-        this.koertKmVedAbonnemtStart = koertKmVedAbonnemtStart;
+        this.licensePlate = licensePlate;
+        Price = price;
+        Fuel = fuel;
+        this.drivenKilometersAtSubscriptionStart = drivenKilometersAtSubscriptionStart;
     }
 
-    public String getBilmaerke() {
-        return bilmaerke;
+    public String getCarBrand() {
+        return carBrand;
     }
 
-    public void setBilmaerke(String bilmaerke) {
-        this.bilmaerke = bilmaerke;
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
     }
 
     public String getModel() {
@@ -55,35 +55,35 @@ public class Car {
         this.model = model;
     }
 
-    public String getRegistreringsnummer() {
-        return registreringsnummer;
+    public String getLicensePlate() {
+        return licensePlate;
     }
 
-    public void setRegistreringsnummer(String registreringsnummer) {
-        this.registreringsnummer = registreringsnummer;
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
     }
 
-    public Double getIndkoebspris() {
-        return indkoebspris;
+    public Double getPrice() {
+        return Price;
     }
 
-    public void setIndkoebspris(Double indkoebspris) {
-        this.indkoebspris = indkoebspris;
+    public void setPrice(Double price) {
+        Price = price;
     }
 
-    public String getBraendstof() {
-        return braendstof;
+    public String getFuel() {
+        return Fuel;
     }
 
-    public void setBraendstof(String braendstof) {
-        this.braendstof = braendstof;
+    public void setFuel(String fuel) {
+        Fuel = fuel;
     }
 
-    public Integer getKoertKmVedAbonnemtStart() {
-        return koertKmVedAbonnemtStart;
+    public Integer getDrivenKilometersAtSubscriptionStart() {
+        return drivenKilometersAtSubscriptionStart;
     }
 
-    public void setKoertKmVedAbonnemtStart(Integer koertKmVedAbonnemtStart) {
-        this.koertKmVedAbonnemtStart = koertKmVedAbonnemtStart;
+    public void setDrivenKilometersAtSubscriptionStart(Integer drivenKilometersAtSubscriptionStart) {
+        this.drivenKilometersAtSubscriptionStart = drivenKilometersAtSubscriptionStart;
     }
 }
