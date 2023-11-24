@@ -6,48 +6,56 @@ import jakarta.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long kundeID;
+    private Long customerID;
 
-    private String navn;
+    private String Name;
 
-    private String adresse;
+    private String Address;
 
-    private String telefon;
+    private String phoneNumber;
 
     private String email;
 
     public Customer() {
     }
 
-    public Customer(String navn, String adresse, String telefon, String email) {
-        this.navn = navn;
-        this.adresse = adresse;
-        this.telefon = telefon;
+    public Customer(String name, String address, String phoneNumber, String email) {
+        Name = name;
+        Address = address;
+        this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
-    public String getNavn() {
-        return navn;
+    public Long getCustomerID() {
+        return customerID;
     }
 
-    public void setNavn(String navn) {
-        this.navn = navn;
+    public void setCustomerID(Long customerID) {
+        this.customerID = customerID;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public String getName() {
+        return Name;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getTelefon() {
-        return telefon;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setTelefon(String telefon) {
-        this.telefon = telefon;
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -58,3 +66,4 @@ public class Customer {
         this.email = email;
     }
 }
+
