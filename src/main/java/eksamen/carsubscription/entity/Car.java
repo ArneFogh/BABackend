@@ -26,17 +26,20 @@ public class Car {
     @Column(nullable = false)
     private Integer drivenKilometersAtSubscriptionStart;
 
+    private String urlPhoto;
+
 
     public Car() {
     }
 
-    public Car(String carBrand, String model, String licensePlate, Double price, String fuel, Integer drivenKilometersAtSubscriptionStart) {
+    public Car(String carBrand, String model, String licensePlate, Double price, String fuel, Integer drivenKilometersAtSubscriptionStart, String urlPhoto) {
         this.carBrand = carBrand;
         this.model = model;
         this.licensePlate = licensePlate;
         Price = price;
         Fuel = fuel;
         this.drivenKilometersAtSubscriptionStart = drivenKilometersAtSubscriptionStart;
+        this.urlPhoto = urlPhoto;
     }
 
     public String getCarBrand() {
@@ -86,4 +89,13 @@ public class Car {
     public void setDrivenKilometersAtSubscriptionStart(Integer drivenKilometersAtSubscriptionStart) {
         this.drivenKilometersAtSubscriptionStart = drivenKilometersAtSubscriptionStart;
     }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public String setUrlPhoto() {
+        return urlPhoto;
+    }
+
 }

@@ -5,7 +5,7 @@ import eksamen.carsubscription.repository.*;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
-import java.util.Date;
+
 
 @Controller
 public class DeveloperData implements ApplicationRunner {
@@ -32,7 +32,7 @@ public class DeveloperData implements ApplicationRunner {
         Customer John = new Customer("John Mogensen", "Marievej 2", "30292219", "john@example.com");
         customerRepo.save(John);
 
-        Car Tesla = new Car("Tesla", "Model S", "NV24503", 650.334, "Electric", 15000);
+        Car Tesla = new Car("Tesla", "Model S", "NV24503", 650.334, "Electric", 15000, "https://static-assets.tesla.com/configurator/compositor?context=design_studio_2?&bkba_opt=1&view=FRONT34&size=1400&model=ms&options=$MDLS,$MTS14,$PMNG,$WS10,$APBS,$SC04,$CPF0,$TW01,$ICC00,$ST0Y&crop=1400,850,300,130&");
         carRepo.save(Tesla);
 
         PickupLocation pickupLocation = new PickupLocation("123 Main St", "Jane Doe", "555-1234");
