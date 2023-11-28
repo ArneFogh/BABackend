@@ -4,6 +4,9 @@ import eksamen.carsubscription.repository.ILeaseAgreement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class LeaseAgreementService {
 
@@ -17,4 +20,29 @@ public class LeaseAgreementService {
     public LeaseAgreement getLeaseAgreement(Long id) {
         return leaseAgreementRepository.findById(id).orElse(null);
     }
+
+    public List<LeaseAgreement> getAllLeaseAgreements() {
+        return leaseAgreementRepository.findAll();
+    }
+
+
+
+    public LeaseAgreement createLeaseAgreement(LeaseAgreement leaseAgreement) {
+        return leaseAgreementRepository.save(leaseAgreement);
+    }
+
+    public LeaseAgreement updateLeaseAgreement(Long id, LeaseAgreement updatedLeaseAgreement) {
+        if (leaseAgreementRepository.existsById(id)) {
+
+            return leaseAgreementRepository.save(updatedLeaseAgreement);
+        } else {
+            // Handle fejl, f.eks. ved at kaste en exception
+            return null;
+        }
+    }
+
+    public void deleteLeaseAgreement(Long id) {
+        leaseAgreementRepository.deleteById(id);
+    }
+
 }

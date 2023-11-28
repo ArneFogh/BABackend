@@ -67,5 +67,13 @@ public class Damages {
     public void setRepairCost(Double repairCost) {
         this.repairCost = repairCost;
     }
+
+    public Long getDamage_id() {
+        return damage_id;
+    }
+
+    public void setDamage_id(Long damage_id) {
+        this.damage_id = damage_id;
+    }
 }
 

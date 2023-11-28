@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 
@@ -23,5 +24,29 @@ private CustomerService customerService;
         return customerService.getCustomer(id);
     }
 
+    @GetMapping("/customer")
+    public ResponseEntity<List<Customer>> getAllCustomers() {
+        List<Customer> customers = customerService.getAllCustomers();
+        return new ResponseEntity<>(customers, HttpStatus.OK);
+    }
 
+    @PostMapping("/customer/create")
+    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
+        Customer createdCustomer = customerService.createCustomer(customer);
+        return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/customer/update/{id}")
+    public ResponseEntity<Customer> updateCustomer(@PathVariable Long id, @RequestBody Customer updatedCustomer) {
+        Customer updated = customerService.updateCustomer(id, updatedCustomer);
+        return updated != null ?
+                new ResponseEntity<>(updated, HttpStatus.OK) :
+                new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @DeleteMapping("/customer/delete/{id}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
+        customerService.deleteCustomer(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

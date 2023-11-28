@@ -132,5 +132,13 @@ public class LeaseAgreement {
     public void setKmDriven(Integer kmDriven) {
         this.kmDriven = kmDriven;
     }
+
+    public Long getLease_id() {
+        return lease_id;
+    }
+
+    public void setLeaseId(Long lease_id) {
+        this.lease_id = lease_id;
+    }
 }
 
