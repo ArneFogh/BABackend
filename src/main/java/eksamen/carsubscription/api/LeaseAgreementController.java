@@ -50,7 +50,13 @@ public class LeaseAgreementController {
 
         return updated != null ?
                 new ResponseEntity<>(updated, HttpStatus.OK) :
-                new ResponseEntity<>(HttpStatus.NO_CONTENT);
-}
+                new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    @DeleteMapping("/leaseAgreement/delete/{id}")
+    public ResponseEntity<Void> deleteLeaseAgreement(@PathVariable Long id) {
+        leaseAgreementService.deleteLeaseAgreement(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 
 }

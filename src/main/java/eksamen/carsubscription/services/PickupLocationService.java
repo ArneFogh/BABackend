@@ -31,14 +31,21 @@ public class PickupLocationService {
     }
 
     public PickupLocation updatePickupLocation(Long id, PickupLocation updatedPickupLocation) {
-        if (pickupLocationRepository.existsById(id)) {
+        Optional<PickupLocation> existingPickupLocation = pickupLocationRepository.findById(id);
 
-            return pickupLocationRepository.save(updatedPickupLocation);
+        if (existingPickupLocation.isPresent()) {
+            PickupLocation currentPickupLocation = existingPickupLocation.get();
+
+            currentPickupLocation.setAddress(updatedPickupLocation.getAddress());
+            currentPickupLocation.setContactPerson(updatedPickupLocation.getContactPerson());
+            currentPickupLocation.setPhone(updatedPickupLocation.getPhone());
+            return pickupLocationRepository.save(currentPickupLocation);
         } else {
-            // Behandl fejl, f.eks. kast en exception eller returner null
+
             return null;
         }
     }
+
 
     public void deletePickupLocation(Long id) {
         pickupLocationRepository.deleteById(id);

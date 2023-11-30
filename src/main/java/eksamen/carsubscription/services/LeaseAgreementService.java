@@ -32,14 +32,28 @@ public class LeaseAgreementService {
     }
 
     public LeaseAgreement updateLeaseAgreement(Long id, LeaseAgreement updatedLeaseAgreement) {
-        if (leaseAgreementRepository.existsById(id)) {
+        Optional<LeaseAgreement> existingLeaseAgreement = leaseAgreementRepository.findById(id);
 
-            return leaseAgreementRepository.save(updatedLeaseAgreement);
+        if (existingLeaseAgreement.isPresent()) {
+            LeaseAgreement currentLeaseAgreement = existingLeaseAgreement.get();
+
+
+            if (updatedLeaseAgreement.getCustomer() != null) {
+                currentLeaseAgreement.setCustomer(updatedLeaseAgreement.getCustomer());
+            }
+
+            if (updatedLeaseAgreement.getCar() != null) {
+                currentLeaseAgreement.setCar(updatedLeaseAgreement.getCar());
+            }
+
+
+            return leaseAgreementRepository.save(currentLeaseAgreement);
         } else {
-            // Handle fejl, f.eks. ved at kaste en exception
+
             return null;
         }
     }
+
 
     public void deleteLeaseAgreement(Long id) {
         leaseAgreementRepository.deleteById(id);

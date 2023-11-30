@@ -44,6 +44,7 @@ private CustomerService customerService;
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+
     @DeleteMapping("/customer/delete/{id}")
     public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
         customerService.deleteCustomer(id);
