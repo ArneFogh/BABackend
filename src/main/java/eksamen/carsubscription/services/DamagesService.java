@@ -30,14 +30,28 @@ public class DamagesService {
     }
 
     public Damages updateDamages(Long id, Damages updatedDamages) {
-        if (damagesRepository.existsById(id)) {
+        Optional<Damages> existingDamagesOptional = damagesRepository.findById(id);
 
-            return damagesRepository.save(updatedDamages);
+        if (existingDamagesOptional.isPresent()) {
+            Damages existingDamages = existingDamagesOptional.get();
+
+
+            existingDamages.setDescription(updatedDamages.getDescription());
+            existingDamages.setRegistrationDate(updatedDamages.getRegistrationDate());
+            existingDamages.setRepairCost(updatedDamages.getRepairCost());
+
+
+            if (!existingDamages.getCar().equals(updatedDamages.getCar())) {
+                existingDamages.setCar(updatedDamages.getCar());
+            }
+
+
+            return damagesRepository.save(existingDamages);
         } else {
-
             return null;
         }
     }
+
 
     public void deleteDamages(Long id) {
         damagesRepository.deleteById(id);

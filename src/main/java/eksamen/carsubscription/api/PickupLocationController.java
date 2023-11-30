@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 
 public class PickupLocationController {
@@ -41,12 +41,16 @@ public class PickupLocationController {
     }
 
     @PutMapping("/pickupLocation/update/{id}")
-    public ResponseEntity<PickupLocation> updatePickupLocation(@PathVariable Long id, @RequestBody PickupLocation updatedPickupLocation) {
+    public ResponseEntity<PickupLocation> updatePickupLocation(
+            @PathVariable Long id,
+            @RequestBody PickupLocation updatedPickupLocation) {
         PickupLocation updated = pickupLocationService.updatePickupLocation(id, updatedPickupLocation);
+
         return updated != null ?
                 new ResponseEntity<>(updated, HttpStatus.OK) :
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
 
     @DeleteMapping("/pickupLocation/delete/{id}")
     public ResponseEntity<Void> deletePickupLocation(@PathVariable Long id) {
