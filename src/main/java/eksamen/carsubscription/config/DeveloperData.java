@@ -91,7 +91,7 @@ public class DeveloperData implements ApplicationRunner {
                 "29-07-2023",
                 4500,
                 18000,
-                21532
+                16566
         );
 
         LeaseAgreement leaseAgreement3 = new LeaseAgreement(
@@ -103,7 +103,7 @@ public class DeveloperData implements ApplicationRunner {
                 "18-06-2023",
                 5000,
                 18000,
-                19755
+                17599
         );
 
         LeaseAgreement leaseAgreement4 = new LeaseAgreement(
@@ -115,7 +115,7 @@ public class DeveloperData implements ApplicationRunner {
                 "21-12-2023",
                 6500,
                 18000,
-                15899
+                19469
         );
 
         LeaseAgreement leaseAgreement5 = new LeaseAgreement(
@@ -127,7 +127,7 @@ public class DeveloperData implements ApplicationRunner {
                 "19-08-2023",
                 9500,
                 36000,
-                19404
+                22861
         );
 
         LeaseAgreement leaseAgreement6 = new LeaseAgreement(
@@ -139,7 +139,7 @@ public class DeveloperData implements ApplicationRunner {
                 "29-12-2023",
                 4000,
                 36000,
-                16912
+                29169
         );
 
         LeaseAgreement leaseAgreement7 = new LeaseAgreement(
@@ -151,7 +151,7 @@ public class DeveloperData implements ApplicationRunner {
                 "30-07-2023",
                 4800,
                 36000,
-                15530
+                27355
         );
 
         LeaseAgreement leaseAgreement8 = new LeaseAgreement(
@@ -163,7 +163,7 @@ public class DeveloperData implements ApplicationRunner {
                 "06-02-2023",
                 5000,
                 36000,
-                19817
+                26689
         );
 
         LeaseAgreement leaseAgreement9 = new LeaseAgreement(
@@ -175,7 +175,7 @@ public class DeveloperData implements ApplicationRunner {
                 "03-02-2023",
                 5000,
                 36000,
-                20967
+                26017
         );
 
         LeaseAgreement leaseAgreement10 = new LeaseAgreement(
@@ -187,7 +187,7 @@ public class DeveloperData implements ApplicationRunner {
                 "03-12-2023",
                 5200,
                 36000,
-                24170
+                27765
         );
 
         LeaseAgreement leaseAgreement11 = new LeaseAgreement(
@@ -199,7 +199,7 @@ public class DeveloperData implements ApplicationRunner {
                 "07-01-2023",
                 5300,
                 36000,
-                13846
+                29161
         );
 
         LeaseAgreement leaseAgreement12 = new LeaseAgreement(
@@ -211,7 +211,7 @@ public class DeveloperData implements ApplicationRunner {
                 "15-07-2023",
                 5500,
                 36000,
-                21170
+                24083
         );
 
         LeaseAgreement leaseAgreement13 = new LeaseAgreement(
@@ -223,7 +223,7 @@ public class DeveloperData implements ApplicationRunner {
                 "25-07-2023",
                 10000,
                 36000,
-                19224
+                27899
         );
 
         LeaseAgreement leaseAgreement14 = new LeaseAgreement(
@@ -235,7 +235,7 @@ public class DeveloperData implements ApplicationRunner {
                 "31-07-2023",
                 8000,
                 54000,
-                28460
+                45218
         );
 
         LeaseAgreement leaseAgreement15 = new LeaseAgreement(
@@ -247,7 +247,7 @@ public class DeveloperData implements ApplicationRunner {
                 "15-02-2023",
                 5000,
                 54000,
-                30079
+                54634
         );
 
         LeaseAgreement leaseAgreement16 = new LeaseAgreement(
@@ -259,7 +259,7 @@ public class DeveloperData implements ApplicationRunner {
                 "25-06-2023",
                 4000,
                 54000,
-                19991
+                47144
         );
 
         LeaseAgreement leaseAgreement17 = new LeaseAgreement(
@@ -271,7 +271,7 @@ public class DeveloperData implements ApplicationRunner {
                 "21-11-2023",
                 7800,
                 54000,
-                30092
+                43762
         );
 
         LeaseAgreement leaseAgreement18 = new LeaseAgreement(
@@ -283,7 +283,7 @@ public class DeveloperData implements ApplicationRunner {
                 "20-04-2023",
                 5000,
                 54000,
-                22540
+                44433
         );
 
         LeaseAgreement leaseAgreement19 = new LeaseAgreement(
@@ -295,7 +295,7 @@ public class DeveloperData implements ApplicationRunner {
                 "13-06-2023",
                 8000,
                 54000,
-                26553
+                54326
         );
 
         Stream.of(
