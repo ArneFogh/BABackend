@@ -38,25 +38,25 @@ public class DeveloperData implements ApplicationRunner {
         String licensePlate = generateRandomLicensePlate();
 
         // For the Car instance
-        Car car1 = new Car("Chevrolet", "Spark", licensePlate, 190000.00, "Benzin", "10-06-2020", 14815, "https://autodominicana.rent/wp-content/uploads/2023/07/Chevrolet-Spark.webp");
-        Car car2 = new Car("Kia", "Niro", licensePlate, 330000.0, "Elektrisk", "29-07-2021", 21532, "https://www.motortrend.com/uploads/sites/5/2020/06/2020-kia-niro-copy.png");
-        Car car3 = new Car("Volvo", "XC60", licensePlate, 680000.0, "Elektrisk", "18-06-2022", 19755, "https://images.dealer.com/ddc/vehicles/2023/Volvo/XC60%20Recharge%20Plug-In%20Hybrid/SUV/perspective/front-left/2023_76.png");
-        Car car4 = new Car("Land Rover", "Defender D200", "AF76890", 1400000.0, "Diesel", "24-01-2022", 15899, "https://assets.meinauto.de/f_auto,q_auto:eco,w_1200/prod/landrover/defender/4/3suv-hse/landrover_21defender90edn1st4wdsu4b_angularfront_gondwana-stone-metallic");
-        Car car5 = new Car("Porsche", "Panamera", "BC23451", 1609000.0, "Hybrid", "07-06-2021", 19404, "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/b2cf8532-1c6f-4d30-8d6a-bcd65561491b/94a5b315-b5dd-4595-a6d7-d9159ecc5e46.png");
-        Car car6 = new Car("Mitsubishi", "ASX", "DE94532", 350000.0, "Benzin", "06-06-2021", 16912, "https://www.leasingmarkt.de/wplm/wp-content/uploads/2020/03/mitsubishi-asx-top-frontansicht.png");
-        Car car7 = new Car("Volkswagen", "ID3", "AF34567", 400000.0, "Elektrisk", "19-04-2021", 15530, "https://www.electrifying.com/files/OBioRr46YqxuA9gU/ID3--ProS.png");
-        Car car8 = new Car("Renault", "Austral", "BC56789", 540000.0, "Benzin", "10-06-2019", 19817, "https://hapi.hessel.dk/assets/2641_319e7715-af21-4cc5-b90c-10006504220e/%7BIMAGE-SIZE%7D/austral-tech-YNM-2.png");
-        Car car9 = new Car("Land Rover", "Range Rover Evoque", "DE67890", 657900.0, "Hybrid", "03-04-2020", 20967, "https://www.motortrend.com/uploads/sites/10/2019/08/2020-land-rover-range-rover-evoque-first-edition-suv-angular-front.png");
-        Car car10 = new Car("Mercedes", "E300", "AF78901", 630000.0, "Hybrid", "19-06-2021", 24170, "https://hapi.hessel.dk/assets/2641_847a3ac6-79a4-42b1-bf59-99610b1b162c/%7BIMAGE-SIZE%7D/E-st-197U.webp");
-        Car car11 = new Car("BMW", "i3 Charged Plus", "GH89012", 225000.0, "Elektrisk", "31-03-2021", 13846, "https://billeder.bilbasen.dk/bilinfo/fb95bdc5-ac67-46a9-a0b3-a016aed7dd09.png?class=S1600X1600");
-        Car car12 = new Car("BMW", "i4 M50 xDrive", "IJ90123", 589000.0, "Elektrisk", "28-04-2020", 21170, "https://bmw-canada-public.s3.ca-central-1.amazonaws.com/production/inventory-vehicle/WBY33AW01RFR53309_HighRes_Front.png");
-        Car car13 = new Car("Porsche", "Taycan", "KL01234", 1690000.0, "Elektrisk", "13-03-2020", 19224, "https://d2ivfcfbdvj3sm.cloudfront.net/7fc965ab77efe6e0fa62e4ca1ea7673bb65a4154031e3d8e88cb10/stills_0640_png/MY2022/50058/50058_st0640_116.png");
-        Car car14 = new Car("Volkswagen", "T-Roc", "MN12345", 250000.0, "Diesel", "08-06-2020", 28460, "https://images.prismic.io/shacarlacca/ZmVhODg5NGYtYWRkOC00Nzk3LWJiMDMtYjQ5ODUxODJhZmU2_2e230c52-77c1-4a28-a401-a411d6cfb170rulecf-450.png?auto=compress,format&rect=0,0,450,300&w=450&h=300");
-        Car car15 = new Car("Ford", "Kuga", "OP23456", 356454.0, "Hybrid", "24-01-2020", 30079, "https://firstlease.dk/media/gsji2wmy/ford-kuga-2020-01.png");
-        Car car16 = new Car("Volvo", "V60", "QR34567", 457000.0, "Hybrid", "26-12-2019", 19991, "https://gomore.imgix.net/uploads/leasing/offer/image/29537/volvo-v60-plug-in-hybrid_GoMore_1675437984.png?ixlib=rails-2.1.2&w=410&h=273&fit=clip&auto=format,compress&dpr=2.625");
-        Car car17 = new Car("Audi", "A5", "ST45678", 664900.0, "Benzin", "30-12-2019", 30092, "https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIiBOTrayfuvpGh6-m1zJgaGigIGBgZGoDhTtNOaz-I_2DhCHsCEtzEwF-SlMwJZKUycmbmJ6an6QD4_I3taTmV-aUkxO0grz6s5mzjO37oztWXu-ZcKa7PnsrE4lTCwAnUxugEJ5j1Agm8bkOCUZgCTIPOmgogeEJ_JgZmBgbUCyIhkAAE-vtKinILEosRcvfLMlJIMQQ0DIoEwu4triKOnTzAAFU2r-ukAAAA?wid=850");
-        Car car18 = new Car("Volvo", "XC90", "UV56789", 780000.0, "Diesel", "02-01-2020", 22540, "https://cas.volvocars.com/image/dynamic/MY24_2317/256/exterior-v3/RC/73500/RC0000/R121/TC05/_/2G03/TJ02/TP05/LR02/JT02/GR02/T102/NP03/TM04/JG02/_/EV02/JB0C/T21C/LF05/_/VP07/UF02/FH02/_/_/_/TR02/_/default.png?market=gb&client=gox-graph%7Ccar-selector-ssr&angle=4&bg=00000000&w=768&bg=f0f0f0");
-        Car car19 = new Car("Tesla", "Model S", "WX67890", 1040000.0, "Elektrisk", "02-01-2020", 26553, "https://static-assets.tesla.com/configurator/compositor?context=design_studio_2?&bkba_opt=1&view=FRONT34&size=1400&model=ms&options=$MDLS,$MTS14,$PMNG,$WS10,$APBS,$SC04,$CPF0,$TW01,$ICC00,$ST0Y&crop=1400,850,300,130&");
+        Car car1 = new Car("Chevrolet", "Spark", licensePlate, 190000.00, "Benzin", "10-06-2020", 14815, "https://i.imgur.com/d9dvtTP.jpeg");
+        Car car2 = new Car("Kia", "Niro", licensePlate, 330000.0, "Elektrisk", "29-07-2021", 21532, "https://i.imgur.com/2Rk1Ydn.png");
+        Car car3 = new Car("Volvo", "XC60", licensePlate, 680000.0, "Elektrisk", "18-06-2022", 19755, "https://i.imgur.com/dr6wkSq.png");
+        Car car4 = new Car("Land Rover", "Defender D200", "AF76890", 1400000.0, "Diesel", "24-01-2022", 15899, "https://i.imgur.com/rgytT0G.png");
+        Car car5 = new Car("Porsche", "Panamera", "BC23451", 1609000.0, "Hybrid", "07-06-2021", 19404, "https://i.imgur.com/aiYXHjK.png");
+        Car car6 = new Car("Mitsubishi", "ASX", "DE94532", 350000.0, "Benzin", "06-06-2021", 16912, "https://i.imgur.com/eSB34AQ.png");
+        Car car7 = new Car("Volkswagen", "ID3", "AF34567", 400000.0, "Elektrisk", "19-04-2021", 15530, "https://i.imgur.com/fcvD3gJ.png");
+        Car car8 = new Car("Renault", "Austral", "BC56789", 540000.0, "Benzin", "10-06-2019", 19817, "https://i.imgur.com/utRRFEO.png");
+        Car car9 = new Car("Land Rover", "Range Rover Evoque", "DE67890", 657900.0, "Hybrid", "03-04-2020", 20967, "https://i.imgur.com/U9HZ63g.png");
+        Car car10 = new Car("Mercedes", "E300", "AF78901", 630000.0, "Hybrid", "19-06-2021", 24170, "https://i.imgur.com/oItVftV.png");
+        Car car11 = new Car("BMW", "i3 Charged Plus", "GH89012", 225000.0, "Elektrisk", "31-03-2021", 13846, "https://i.imgur.com/ryEZ2mI.png");
+        Car car12 = new Car("BMW", "i4 M50 xDrive", "IJ90123", 589000.0, "Elektrisk", "28-04-2020", 21170, "https://i.imgur.com/VWPnRdM.png");
+        Car car13 = new Car("Porsche", "Taycan", "KL01234", 1690000.0, "Elektrisk", "13-03-2020", 19224, "https://i.imgur.com/tgfD2Xt.png");
+        Car car14 = new Car("Volkswagen", "T-Roc", "MN12345", 250000.0, "Diesel", "08-06-2020", 28460, "https://i.imgur.com/bPxAMNG.png");
+        Car car15 = new Car("Ford", "Kuga", "OP23456", 356454.0, "Hybrid", "24-01-2020", 30079, "https://i.imgur.com/86VavOE.png");
+        Car car16 = new Car("Volvo", "V60", "QR34567", 457000.0, "Hybrid", "26-12-2019", 19991, "https://i.imgur.com/DqNsQlk.png");
+        Car car17 = new Car("Audi", "A5", "ST45678", 664900.0, "Benzin", "30-12-2019", 30092, "https://i.imgur.com/0nE83ab.png");
+        Car car18 = new Car("Volvo", "XC90", "UV56789", 780000.0, "Diesel", "02-01-2020", 22540, "https://i.imgur.com/ffYX0uV.png");
+        Car car19 = new Car("Tesla", "Model S", "WX67890", 1040000.0, "Elektrisk", "02-01-2020", 26553, "https://i.imgur.com/rrFGncg.png");
 
         Stream.of(car1, car2, car3, car4, car5, car6, car7, car8, car9, car10, car11, car12, car13, car14, car15, car16, car17, car18, car19)
                 .forEach(carRepo::save);
