@@ -38,7 +38,7 @@ public class DeveloperData implements ApplicationRunner {
         String licensePlate = generateRandomLicensePlate();
 
         // For the Car instance
-        Car car1 = new Car("Chevrolet", "Spark", licensePlate, 190000.00, "Benzin", "10-06-2020", 14815, "https://i.imgur.com/d9dvtTP.jpeg");
+        Car car1 = new Car("Chevrolet", "Spark", licensePlate, 190000.00, "Benzin", "10-06-2020", 14815, "https://i.imgur.com/pVUZHHG.png");
         Car car2 = new Car("Kia", "Niro", licensePlate, 330000.0, "Elektrisk", "29-07-2021", 21532, "https://i.imgur.com/2Rk1Ydn.png");
         Car car3 = new Car("Volvo", "XC60", licensePlate, 680000.0, "Elektrisk", "18-06-2022", 19755, "https://i.imgur.com/dr6wkSq.png");
         Car car4 = new Car("Land Rover", "Defender D200", "AF76890", 1400000.0, "Diesel", "24-01-2022", 15899, "https://i.imgur.com/rgytT0G.png");
