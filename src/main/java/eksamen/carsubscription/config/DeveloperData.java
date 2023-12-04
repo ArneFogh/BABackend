@@ -306,7 +306,8 @@ public class DeveloperData implements ApplicationRunner {
         ).forEach(leaseAgreementRepo::save);
 
 
-
+        Damages damages = new Damages(car3, "Lille bule på bagsiden", "2023-06-15", 500.0, leaseAgreement2);
+        damageRepo.save(damages);
 
     }
 
@@ -323,6 +324,8 @@ public class DeveloperData implements ApplicationRunner {
         // Combine to form a license plate
         return String.format("%c%c%05d", letter1, letter2, number);
     }
+
+
 
     }
 

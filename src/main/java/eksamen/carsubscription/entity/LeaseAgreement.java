@@ -10,7 +10,7 @@ import java.util.Date;
 public class LeaseAgreement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long lease_id;
+    private Long leaseId;
 
     @ManyToOne
     @JoinColumn(name = "customerId", nullable = false)
@@ -133,12 +133,12 @@ public class LeaseAgreement {
         this.kmDriven = kmDriven;
     }
 
-    public Long getLease_id() {
-        return lease_id;
+    public Long getLeaseId() {
+        return leaseId;
     }
 
-    public void setLeaseId(Long lease_id) {
-        this.lease_id = lease_id;
+    public void setLeaseId(Long leaseId) {
+        this.leaseId = leaseId;
     }
 }
 
