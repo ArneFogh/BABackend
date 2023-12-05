@@ -32,7 +32,31 @@ public class DeveloperData implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         // Assuming John is a default customer if needed
         Customer defaultCustomer = new Customer("John Doe", "Default Address", "00000000", "john.doe@example.com");
+        Customer customer1 = new Customer("Anders Andersen", "Bakkegårdsvej 1", "12345678", "anders.andersen@example.com");
+        Customer customer2 = new Customer("Lise Nielsen", "Skovvej 2A", "23456789", "lise.nielsen@example.com");
+        Customer customer3 = new Customer("Mads Pedersen", "Søndergade 3", "34567890", "mads.pedersen@example.com");
+        Customer customer4 = new Customer("Anne Hansen", "Højtoftevej 4B", "45678901", "anne.hansen@example.com");
+        Customer customer5 = new Customer("Jens Larsen", "Møllevej 5C", "56789012", "jens.larsen@example.com");
+        Customer customer6 = new Customer("Sofie Rasmussen", "Strandgade 6", "67890123", "sofie.rasmussen@example.com");
+        Customer customer7 = new Customer("Emil Christensen", "Bredgade 7A", "78901234", "emil.christensen@example.com");
+        Customer customer8 = new Customer("Ida Jørgensen", "Østergade 8", "89012345", "ida.jorgensen@example.com");
+        Customer customer9 = new Customer("Frederik Poulsen", "Vestergade 9B", "90123456", "frederik.poulsen@example.com");
+        Customer customer10 = new Customer("Lærke Eriksen", "Nørregade 10C", "01234567", "laerke.eriksen@example.com");
+        Customer customer11 = new Customer("Christian Mikkelsen", "Viborgvej 11", "11223344", "christian.mikkelsen@example.com");
+        Customer customer12 = new Customer("Sarah Sørensen", "Grenåvej 12", "22334455", "sarah.sorensen@example.com");
+        Customer customer13 = new Customer("Nikolaj Jensen", "Aalborggade 13A", "33445566", "nikolaj.jensen@example.com");
+        Customer customer14 = new Customer("Laura Nielsen", "Randersvej 14", "44556677", "laura.nielsen@example.com");
+        Customer customer15 = new Customer("Rasmus Olsen", "Horsensvej 15B", "55667788", "rasmus.olsen@example.com");
+        Customer customer16 = new Customer("Amalie Madsen", "Holstebrovej 16C", "66778899", "amalie.madsen@example.com");
+        Customer customer17 = new Customer("Simon Kristensen", "Odensegade 17", "77889900", "simon.kristensen@example.com");
+        Customer customer18 = new Customer("Mia Pedersen", "Aarhusvej 18", "88990011", "mia.pedersen@example.com");
+        Customer customer19 = new Customer("Jonas Christensen", "Esbjergvej 19", "99001122", "jonas.christensen@example.com");
+        Customer customer20 = new Customer("Nina Mikkelsen", "Herninggade 20", "00112233", "nina.mikkelsen@example.com");
+
         customerRepo.save(defaultCustomer);
+        Stream.of(customer1, customer2, customer3, customer4, customer5, customer6, customer7, customer8, customer9, customer10, customer11, customer12, customer13, customer14, customer15, customer16, customer17, customer18, customer19, customer20)
+                .forEach(customerRepo::save);
+
 
         // Method to generate a random license plate
         String licensePlate = generateRandomLicensePlate();
