@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 
 public class CarController {
@@ -47,6 +47,7 @@ public class CarController {
                 new ResponseEntity<>(updated, HttpStatus.OK) :
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
 
     @DeleteMapping("/car/delete/{id}")
     public ResponseEntity<Void> deleteCar(@PathVariable Long id) {

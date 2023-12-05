@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-
+@CrossOrigin(origins = "http://localhost:3000")
 public class CustomerController {
 private CustomerService customerService;
 
@@ -43,6 +43,7 @@ private CustomerService customerService;
                 new ResponseEntity<>(updated, HttpStatus.OK) :
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
 
     @DeleteMapping("/customer/delete/{id}")
     public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {

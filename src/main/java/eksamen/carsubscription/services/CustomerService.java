@@ -31,14 +31,25 @@ public class CustomerService {
     }
 
     public Customer updateCustomer(Long id, Customer updatedCustomer) {
-        if (customerRepository.existsById(id)) {
+        Optional<Customer> existingCustomer = customerRepository.findById(id);
 
-            return customerRepository.save(updatedCustomer);
+        if (existingCustomer.isPresent()) {
+            Customer currentCustomer = existingCustomer.get();
+
+
+            currentCustomer.setName(updatedCustomer.getName());
+            currentCustomer.setAddress(updatedCustomer.getAddress());
+            currentCustomer.setPhoneNumber(updatedCustomer.getPhoneNumber());
+            currentCustomer.setEmail(updatedCustomer.getEmail());
+
+
+            return customerRepository.save(currentCustomer);
         } else {
-
             return null;
         }
     }
+
+
 
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);

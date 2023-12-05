@@ -3,13 +3,14 @@ package eksamen.carsubscription.api;
 import eksamen.carsubscription.entity.Damages;
 import eksamen.carsubscription.services.DamagesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 
 public class DamagesController {
@@ -35,10 +36,11 @@ public class DamagesController {
     }
 
     @PostMapping("/damages/create")
-    public ResponseEntity<Damages> createDamages(@RequestBody Damages damages) {
+    public ResponseEntity<Damages> createDamages(@RequestBody Damages damages) throws ChangeSetPersister.NotFoundException {
         Damages createdDamages = damagesService.createDamages(damages);
         return new ResponseEntity<>(createdDamages, HttpStatus.CREATED);
     }
+
 
     @PutMapping("/damages/update/{id}")
     public ResponseEntity<Damages> updateDamages(@PathVariable Long id, @RequestBody Damages updatedDamages) {

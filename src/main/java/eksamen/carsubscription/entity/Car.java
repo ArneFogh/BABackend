@@ -23,6 +23,8 @@ public class Car {
     @Column(nullable = false)
     private String Fuel;
 
+    private String dateOfPurchase;
+
     @Column(nullable = false)
     private Integer drivenKilometersAtSubscriptionStart;
 
@@ -32,12 +34,13 @@ public class Car {
     public Car() {
     }
 
-    public Car(String carBrand, String model, String licensePlate, Double price, String fuel, Integer drivenKilometersAtSubscriptionStart, String urlPhoto) {
+    public Car(String carBrand, String model, String licensePlate, Double price, String fuel, String dateOfPurchase, Integer drivenKilometersAtSubscriptionStart, String urlPhoto) {
         this.carBrand = carBrand;
         this.model = model;
         this.licensePlate = licensePlate;
         Price = price;
         Fuel = fuel;
+        this.dateOfPurchase = dateOfPurchase;
         this.drivenKilometersAtSubscriptionStart = drivenKilometersAtSubscriptionStart;
         this.urlPhoto = urlPhoto;
     }
@@ -81,6 +84,10 @@ public class Car {
     public void setFuel(String fuel) {
         Fuel = fuel;
     }
+
+    public String getDateOfPurchase() { return dateOfPurchase; }
+
+    public void setDateOfPurchase(String dateOfPurchase) { this.dateOfPurchase = dateOfPurchase; }
 
     public Integer getDrivenKilometersAtSubscriptionStart() {
         return drivenKilometersAtSubscriptionStart;

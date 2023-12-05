@@ -8,12 +8,15 @@ import java.util.Date;
 public class Damages {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long damage_id;
+    private Long damageId;
 
     @ManyToOne
     @JoinColumn(name = "carId", nullable = false)
     private Car car;
 
+    @ManyToOne
+    @JoinColumn(name = "leaseId", nullable = false)
+    private LeaseAgreement leaseAgreement;
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
@@ -29,11 +32,13 @@ public class Damages {
     public Damages() {
     }
 
-    public Damages(Car car, String description, String registrationDate, Double repairCost) {
+    public Damages(Car car, String description, String registrationDate, Double repairCost, LeaseAgreement leaseAgreement) {
         this.car = car;
         this.description = description;
         this.registrationDate = registrationDate;
         this.repairCost = repairCost;
+        this.leaseAgreement = leaseAgreement;
+
     }
 
     public Car getCar() {
@@ -69,11 +74,19 @@ public class Damages {
     }
 
     public Long getDamage_id() {
-        return damage_id;
+        return damageId;
     }
 
     public void setDamage_id(Long damage_id) {
-        this.damage_id = damage_id;
+        this.damageId = damage_id;
+    }
+
+    public LeaseAgreement getLeaseAgreement() {
+        return leaseAgreement;
+    }
+
+    public void setLeaseAgreement(LeaseAgreement leaseAgreement) {
+        this.leaseAgreement = leaseAgreement;
     }
 }
 

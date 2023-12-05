@@ -31,12 +31,24 @@ public class CarService {
     }
 
     public Car updateCar(Long id, Car updatedCar) {
-        if (carRepository.existsById(id)) {
+        Optional<Car> existingCarOptional = carRepository.findById(id);
 
-            return carRepository.save(updatedCar);
+        if (existingCarOptional.isPresent()) {
+            Car existingCar = existingCarOptional.get();
+            existingCar.setCarBrand(updatedCar.getCarBrand());
+            existingCar.setModel(updatedCar.getModel());
+            existingCar.setLicensePlate(updatedCar.getLicensePlate());
+            existingCar.setPrice(updatedCar.getPrice());
+            existingCar.setFuel(updatedCar.getFuel());
+            existingCar.setDrivenKilometersAtSubscriptionStart(updatedCar.getDrivenKilometersAtSubscriptionStart());
+            existingCar.setUrlPhoto(updatedCar.getUrlPhoto());
+
+            return carRepository.save(existingCar);
         }
+
         return null;
     }
+
 
     public boolean deleteCar(Long id) {
         if (carRepository.existsById(id)) {
