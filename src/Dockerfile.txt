@@ -1,0 +1,24 @@
+# Brug OpenJDK 17 som base image, da din applikation bruger Java 17
+FROM openjdk:17
+
+# Angiv arbejdsmappe i containeren
+WORKDIR /app
+
+# Kopiér Maven pom.xml og kildekoden ind i containeren
+COPY pom.xml
+COPY src ./src
+
+# Byg applikationen ved hjælp af Maven
+# Dette vil hente alle afhængigheder og bygge en JAR-fil
+RUN --mount=type=cache,target=/root/.m2 mvn clean package -DskipTests
+
+# Find og kopier den byggede JAR-fil til roden af arbejdsområdet
+# Dette antager, at din JAR-fil ligger under target/ og ender med .jar
+RUN cp target/*.jar app.jar
+
+# Angiv standardkommandoen til at køre din applikation
+# Dette vil køre Spring Boot-applikationen, når containeren starter
+ENTRYPOINT ["java","-jar","app.jar"]
+
+# Eksponér den port, din applikation kører på (normalt 8080 for Spring Boot)
+EXPOSE 8080
