@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-@CrossOrigin(origins = "https://gust9196.github.io")
+@CrossOrigin(origins = "https://localhost:3000/")
 @RestController
 
 public class PickupLocationController {
