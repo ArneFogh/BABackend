@@ -48,9 +48,7 @@ jobs:
           echo "JDBC_DATABASE_URL=${{ secrets.JDBC_DATABASE_URL }}"
           echo "JDBC_DATABASE_USER=Arne"
           # Don't print passwords or other sensitive data
-      - name: Check database connectivity
-        run: |
-          telnet bilabonnementabd.mysql.database.azure.com 3306
+
       - name: Build with Maven
         env:
           JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
