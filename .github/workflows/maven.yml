@@ -33,3 +33,7 @@ jobs:
         JDBC_DATABASE_USER: ${{ secrets.JDBC_DATABASE_USER }}
         JDBC_DATABASE_PASSWORD: ${{ secrets.JDBC_DATABASE_PASSWORD }}
       run: mvn -B package --file pom.xml
+    - name: Debug Secrets
+      run: |
+        echo "JDBC_USERNAME: $JDBC_USERNAME"
+        echo "JDBC_PASSWORD: $JDBC_PASSWORD"
