@@ -2,6 +2,7 @@ package eksamen.carsubscription.entity;
 
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "Cars")
 public class Car {
