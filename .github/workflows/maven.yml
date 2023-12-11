@@ -48,6 +48,15 @@ jobs:
           JDBC_DATABASE_USER: Arne
           JDBC_DATABASE_PASSWORD: ${{ secrets.JDBC_DATABASE_PASSWORD }}
         run: mvn -X -B package --file pom.xml
+      - name: Print environment variables
+        run: |
+          echo "JDBC_DATABASE_URL=$JDBC_DATABASE_URL"
+          echo "JDBC_DATABASE_USER=$JDBC_DATABASE_USER"
+          # Don't print passwords or other sensitive data
+      - name: Check database connectivity
+        run: |
+          telnet host_of_your_database 3306
+
 
 
 #        JDBC_DATABASE_URL: jdbc:mysql://bilabonnementabd.mysql.database.azure.com:3306/badk?useSSL=true
