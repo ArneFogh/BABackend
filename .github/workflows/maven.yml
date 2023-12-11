@@ -42,12 +42,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        env:
-          JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
-          JDBC_DATABASE_USER: Arne
-          JDBC_DATABASE_PASSWORD: ${{ secrets.JDBC_DATABASE_PASSWORD }}
-        run: mvn -X -B package --file pom.xml
+
       - name: Print environment variables
         run: |
           echo "JDBC_DATABASE_URL=$JDBC_DATABASE_URL"
@@ -56,7 +51,12 @@ jobs:
       - name: Check database connectivity
         run: |
           telnet host_of_your_database 3306
-
+      - name: Build with Maven
+        env:
+          JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
+          JDBC_DATABASE_USER: Arne
+          JDBC_DATABASE_PASSWORD: ${{ secrets.JDBC_DATABASE_PASSWORD }}
+        run: mvn -X -B package --file pom.xml
 
 
 #        JDBC_DATABASE_URL: jdbc:mysql://bilabonnementabd.mysql.database.azure.com:3306/badk?useSSL=true
