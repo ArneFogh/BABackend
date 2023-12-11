@@ -50,7 +50,7 @@ jobs:
           # Don't print passwords or other sensitive data
       - name: Check database connectivity
         run: |
-          telnet jdbc:mysql://bilabonnementabd.mysql.database.azure.com 3306
+          telnet bilabonnementabd.mysql.database.azure.com 3306
       - name: Build with Maven
         env:
           JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
