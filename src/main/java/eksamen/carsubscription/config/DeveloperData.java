@@ -88,12 +88,11 @@ public class DeveloperData implements ApplicationRunner {
 
         //Pickup / DropOff Locations
         PickupLocation defaultPickupLocation = new PickupLocation("Vibeholmsvej 31, 2605 Brøndby", "John Doe", "22334455");
-        PickupLocation defaultDropoffLocation = new PickupLocation("Vibeholmsvej 31, 2605 Brøndby", "John Doe", "22334455");
         PickupLocation fdmAarhus = new PickupLocation("Vintervej 1, 8210 Århus", "FDM Aarhus", "23456789");
         PickupLocation fdmAalborg = new PickupLocation("Atletikvej 6, 9230 Svenstrup", "FDM Aalborg", "34567890");
         PickupLocation fdmFredericia = new PickupLocation("Vesterballevej 6, 7000 Fredericia", "FDM Fredericia", "45678901");
         PickupLocation fdmSilkeborg = new PickupLocation("Bredhøjvej 5, 8600 Silkeborg", "FDM Silkeborg", "56789012");
-        Stream.of(defaultPickupLocation, defaultDropoffLocation, fdmAarhus, fdmAalborg, fdmFredericia, fdmSilkeborg)
+        Stream.of(defaultPickupLocation, fdmAarhus, fdmAalborg, fdmFredericia, fdmSilkeborg)
                 .forEach(pickupLocationRepo::save);
 
 
@@ -103,7 +102,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer,       // customer - using the default one created above
                 car1,                  // car
                 defaultPickupLocation, // pickupLocation - Assuming this is the same for pickup and dropoff
-                defaultDropoffLocation, // dropoffLocation
+                defaultPickupLocation, // dropoffLocation
                 "25-12-2021",          // startDate
                 "25-12-2023",          // endDate
                 4000,                  // monthlySubscriptionPrice
@@ -115,7 +114,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Assuming a default customer is used
                 car2,
                 defaultPickupLocation,
-                defaultDropoffLocation, // Assuming dropoff is the same as pickup for example
+                defaultPickupLocation, // Assuming dropoff is the same as pickup for example
                 "29-07-2021",
                 "29-07-2023",
                 4500,
@@ -127,7 +126,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer,
                 car3,
                 defaultPickupLocation,
-                defaultDropoffLocation,
+                defaultPickupLocation,
                 "18-06-2022",
                 "18-06-2023",
                 5000,
@@ -139,7 +138,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car4,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "21-12-2022",
                 "21-12-2023",
                 6500,
@@ -151,7 +150,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car5,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "19-08-2021",
                 "19-08-2023",
                 9500,
@@ -163,7 +162,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car6,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "29-12-2021",
                 "29-12-2023",
                 4000,
@@ -175,7 +174,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car7,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "30-07-2021",
                 "30-07-2023",
                 4800,
@@ -187,7 +186,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car8,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "06-02-2021",
                 "06-02-2023",
                 5000,
@@ -199,7 +198,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car9,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "03-02-2021",
                 "03-02-2023",
                 5000,
@@ -211,7 +210,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car10,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "03-12-2021",
                 "03-12-2023",
                 5200,
@@ -223,7 +222,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car11,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "07-01-2021",
                 "07-01-2023",
                 5300,
@@ -235,7 +234,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car12,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "15-07-2021",
                 "15-07-2023",
                 5500,
@@ -247,7 +246,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car13,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "25-07-2020",
                 "25-07-2023",
                 10000,
@@ -259,7 +258,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car14,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "31-07-2020",
                 "31-07-2023",
                 8000,
@@ -271,7 +270,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car15,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "15-02-2020",
                 "15-02-2023",
                 5000,
@@ -283,7 +282,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car16,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "25-06-2020",
                 "25-06-2023",
                 4000,
@@ -295,7 +294,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car17,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "21-11-2020",
                 "21-11-2023",
                 7800,
@@ -307,7 +306,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car18,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "20-04-2020",
                 "20-04-2023",
                 5000,
@@ -319,7 +318,7 @@ public class DeveloperData implements ApplicationRunner {
                 defaultCustomer, // Replace with actual customer object
                 car19,
                 defaultPickupLocation, // Replace with actual location object
-                defaultDropoffLocation, // Replace with actual location object
+                defaultPickupLocation, // Replace with actual location object
                 "13-06-2020",
                 "13-06-2023",
                 8000,
