@@ -7,6 +7,8 @@ import eksamen.carsubscription.repository.ICar;
 import eksamen.carsubscription.repository.ICustomer;
 import eksamen.carsubscription.repository.ILeaseAgreement;
 import eksamen.carsubscription.repository.IPickupLocation;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
@@ -40,55 +42,39 @@ public class LeaseAgreementService {
 
 
 
-    public LeaseAgreement createLeaseAgreement(LeaseAgreement leaseAgreement) throws ChangeSetPersister.NotFoundException {
-        // Check om bilen eksisterer ved at bruge bilens id
-        Car car = leaseAgreement.getCar();
-        if (car != null && car.getCarId() != null) {
-            Optional<Car> carOptional = carRepository.findById(car.getCarId());
+    public LeaseAgreement createLeaseAgreement(LeaseAgreement leaseAgreement) {
+        try {
+            // Validate IDs
+            Long customerId = leaseAgreement.getCustomer().getCustomerID();
+            Long carId = leaseAgreement.getCar().getCarId();
+            Long pickupLocationId = leaseAgreement.getPickupLocation().getId();
+            Long dropoffLocationId = leaseAgreement.getDropoffLocation().getId();
 
-            if (carOptional.isPresent()) {
-                // Hvis bilen findes, sæt bilen på leasingaftalen
-                leaseAgreement.setCar(carOptional.get());
+            // Ensure customer, car, pickupLocation, and dropoffLocation exist
+            Customer customer = customerRepository.findById(customerId).orElseThrow(EntityNotFoundException::new);
+            Car car = carRepository.findById(carId).orElseThrow(EntityNotFoundException::new);
 
-                // Check om afhentningsstedet eksisterer ved at bruge afhentningsstedets id
-                PickupLocation pickupLocation = leaseAgreement.getPickupLocation();
-                if (pickupLocation != null && pickupLocation.getId() != null) {
-                    Optional<PickupLocation> pickupLocationOptional = pickupLocationRepository.findById(pickupLocation.getId());
+            // Assuming PickupLocationRepository extends JpaRepository<PickupLocation, Long>
+            PickupLocation pickupLocation = pickupLocationRepository.findById(pickupLocationId).orElseThrow(EntityNotFoundException::new);
+            PickupLocation dropoffLocation = pickupLocationRepository.findById(dropoffLocationId).orElseThrow(EntityNotFoundException::new);
 
-                    if (pickupLocationOptional.isPresent()) {
-                        // Hvis afhentningsstedet findes, sæt det på leasingaftalen
-                        leaseAgreement.setPickupLocation(pickupLocationOptional.get());
-                    } else {
-                        // Håndter scenariet, hvor afhentningsstedet ikke findes
-                        throw new ChangeSetPersister.NotFoundException();
-                    }
-                }
+            // Set associations
+            leaseAgreement.setCustomer(customer);
+            leaseAgreement.setCar(car);
+            leaseAgreement.setPickupLocation(pickupLocation);
+            leaseAgreement.setDropoffLocation(dropoffLocation);
 
-                // Check om kunden eksisterer ved at bruge kundens id
-                Customer customer = leaseAgreement.getCustomer();
-                if (customer != null && customer.getCustomerID() != null) {
-                    Optional<Customer> customerOptional = customerRepository.findById(customer.getCustomerID());
-
-                    if (customerOptional.isPresent()) {
-                        // Hvis kunden findes, sæt kunden på leasingaftalen
-                        leaseAgreement.setCustomer(customerOptional.get());
-                    } else {
-                        // Håndter scenariet, hvor kunden ikke findes
-                        throw new ChangeSetPersister.NotFoundException();
-                    }
-                }
-
-                // Gem leasingaftalen i databasen
-                return leaseAgreementRepository.save(leaseAgreement);
-            } else {
-                // Håndter scenariet, hvor bilen ikke findes
-                throw new ChangeSetPersister.NotFoundException();
-            }
-        } else {
-            // Håndter scenariet, hvor bilen eller dens id er null
-            throw new IllegalArgumentException("Car or car ID must not be null");
+            // Save the lease agreement
+            return leaseAgreementRepository.save(leaseAgreement);
+        } catch (EntityNotFoundException e) {
+            throw new RuntimeException("One or more entities not found: " + e.getMessage());
         }
     }
+
+
+
+
+
 
 
 
