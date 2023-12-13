@@ -88,9 +88,14 @@ public class DeveloperData implements ApplicationRunner {
 
         //Pickup / DropOff Locations
         PickupLocation defaultPickupLocation = new PickupLocation("Vibeholmsvej 31, 2605 Brøndby", "John Doe", "22334455");
-        pickupLocationRepo.save(defaultPickupLocation);
         PickupLocation defaultDropoffLocation = new PickupLocation("Vibeholmsvej 31, 2605 Brøndby", "John Doe", "22334455");
-        pickupLocationRepo.save(defaultDropoffLocation);
+        PickupLocation fdmAarhus = new PickupLocation("Vintervej 1, 8210 Århus", "FDM Aarhus", "23456789");
+        PickupLocation fdmAalborg = new PickupLocation("Atletikvej 6, 9230 Svenstrup", "FDM Aalborg", "34567890");
+        PickupLocation fdmFredericia = new PickupLocation("Vesterballevej 6, 7000 Fredericia", "FDM Fredericia", "45678901");
+        PickupLocation fdmSilkeborg = new PickupLocation("Bredhøjvej 5, 8600 Silkeborg", "FDM Silkeborg", "56789012");
+        Stream.of(defaultPickupLocation, defaultDropoffLocation, fdmAarhus, fdmAalborg, fdmFredericia, fdmSilkeborg)
+                .forEach(pickupLocationRepo::save);
+
 
 
         // For the LeaseAgreement instance, use the default customer if necessary
