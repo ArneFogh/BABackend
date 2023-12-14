@@ -30,9 +30,7 @@ public class UserController {
 
     @GetMapping("/user/loginCheck")
     public ResponseEntity<?> loginUser(@RequestParam String email, @RequestParam String password) {
-        // Antager her, at du har en metode til at hente brugeren baseret på email
         User user = userService.findByEmail(email);
-
         if(user != null && user.getPassword().equals(password)) {
             return ResponseEntity.ok().body(Collections.singletonMap("valid", true));
         } else {
