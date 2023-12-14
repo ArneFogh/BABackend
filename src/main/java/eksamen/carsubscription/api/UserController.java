@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "https://gust9196.github.io/frontend")
+@CrossOrigin(origins = "https://gust9196.github.io")
 @RestController
 public class UserController {
 
