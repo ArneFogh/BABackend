@@ -84,7 +84,7 @@ The BA Backend API provides a comprehensive set of endpoints for managing variou
  - 🧐Nicklas Sienczak `@nicklassienczak`
  
 
-If you wish to contact us, you can mention us by tagging with `@` followed by the username. We will receive a notification and will be able to assist you. Our usernames are listed above! 🥰
+If you wish to contact us, you can mention us by tagging with `@` followed by the username. We will receive a notification and will be able to assist you. Our usernames are listed above! Thanks 🥰
 
 ## ⚖️ License
 
