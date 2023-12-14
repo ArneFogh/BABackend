@@ -1,4 +1,5 @@
 package eksamen.carsubscription.config;
+import eksamen.carsubscription.entity.User;
 
 import eksamen.carsubscription.entity.*;
 import eksamen.carsubscription.repository.*;
@@ -17,15 +18,16 @@ public class DeveloperData implements ApplicationRunner {
     private final ILeaseAgreement leaseAgreementRepo;
     private final IDamages damageRepo;
 
-    public DeveloperData(ICustomer customerRepo, ICar carRepo,
-                         IPickupLocation pickupLocationRepo,
-                         ILeaseAgreement leaseAgreementRepo,
-                         IDamages damageRepo) {
+    private final IUser userRepo;
+
+    public DeveloperData(ICustomer customerRepo, ICar carRepo, IPickupLocation pickupLocationRepo, ILeaseAgreement leaseAgreementRepo, IDamages damageRepo, IUser userRepo) {
         this.customerRepo = customerRepo;
         this.carRepo = carRepo;
         this.pickupLocationRepo = pickupLocationRepo;
         this.leaseAgreementRepo = leaseAgreementRepo;
         this.damageRepo = damageRepo;
+        this.userRepo = userRepo;
+
     }
 
     @Override
@@ -336,8 +338,12 @@ public class DeveloperData implements ApplicationRunner {
 
         Damages damages = new Damages(car3, "Lille bule på bagsiden", "2023-06-15", 500.0, leaseAgreement2);
         damageRepo.save(damages);
-
+        User admin = new User("admin@hotmail.dk","admin123");
+        userRepo.save(admin);
     }
+
+
+
 
 
 

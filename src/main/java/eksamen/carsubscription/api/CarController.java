@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 
 public class CarController {
-
+//hej
     private final CarService carService;
 
     @Autowired

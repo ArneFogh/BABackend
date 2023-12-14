@@ -117,4 +117,8 @@ public class Car {
     public void setUrlPhoto(String urlPhoto) {
         this.urlPhoto = urlPhoto;
     }
+
+
+
+
 }
