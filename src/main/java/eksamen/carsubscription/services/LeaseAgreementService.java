@@ -44,27 +44,27 @@ public class LeaseAgreementService {
 
     public LeaseAgreement createLeaseAgreement(LeaseAgreement leaseAgreement) {
         try {
-            // Validate IDs
+
             Long customerId = leaseAgreement.getCustomer().getCustomerID();
             Long carId = leaseAgreement.getCar().getCarId();
             Long pickupLocationId = leaseAgreement.getPickupLocation().getId();
             Long dropoffLocationId = leaseAgreement.getDropoffLocation().getId();
 
-            // Ensure customer, car, pickupLocation, and dropoffLocation exist
+
             Customer customer = customerRepository.findById(customerId).orElseThrow(EntityNotFoundException::new);
             Car car = carRepository.findById(carId).orElseThrow(EntityNotFoundException::new);
 
-            // Assuming PickupLocationRepository extends JpaRepository<PickupLocation, Long>
+
             PickupLocation pickupLocation = pickupLocationRepository.findById(pickupLocationId).orElseThrow(EntityNotFoundException::new);
             PickupLocation dropoffLocation = pickupLocationRepository.findById(dropoffLocationId).orElseThrow(EntityNotFoundException::new);
 
-            // Set associations
+
             leaseAgreement.setCustomer(customer);
             leaseAgreement.setCar(car);
             leaseAgreement.setPickupLocation(pickupLocation);
             leaseAgreement.setDropoffLocation(dropoffLocation);
 
-            // Save the lease agreement
+
             return leaseAgreementRepository.save(leaseAgreement);
         } catch (EntityNotFoundException e) {
             throw new RuntimeException("One or more entities not found: " + e.getMessage());

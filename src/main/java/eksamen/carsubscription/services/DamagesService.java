@@ -38,7 +38,7 @@ public class DamagesService {
             damages.setLeaseAgreement(leaseAgreement);
             return damagesRepository.save(damages);
         } else {
-            // Håndter scenariet, hvor den tilknyttede leasingaftale ikke findes
+
             throw new ChangeSetPersister.NotFoundException();
         }
     }

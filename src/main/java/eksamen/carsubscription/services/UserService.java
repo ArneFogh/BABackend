@@ -27,12 +27,12 @@ public class UserService {
     }
 
     public User findByEmail(String email) {
-        // Implement your logic to retrieve a user by email
+
         return userRepository.findByEmail(email);
     }
 
     public ResponseEntity<?> loginUser(String email, String password) {
-        // Find the user by email
+
         User user = findByEmail(email);
 
         if (user != null && user.getPassword().equals(password)) {
