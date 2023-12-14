@@ -2,13 +2,14 @@ package eksamen.carsubscription.api;
 
 import eksamen.carsubscription.entity.LeaseAgreement;
 import eksamen.carsubscription.services.LeaseAgreementService;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class LeaseAgreementController {
 
@@ -37,10 +38,11 @@ public class LeaseAgreementController {
 
 
     @PostMapping("/leaseAgreement/create")
-    public ResponseEntity<LeaseAgreement> createLeaseAgreement(@RequestBody LeaseAgreement leaseAgreement) {
+    public ResponseEntity<LeaseAgreement> createLeaseAgreement(@RequestBody LeaseAgreement leaseAgreement) throws ChangeSetPersister.NotFoundException {
         LeaseAgreement createdLeaseAgreement = leaseAgreementService.createLeaseAgreement(leaseAgreement);
         return new ResponseEntity<>(createdLeaseAgreement, HttpStatus.CREATED);
     }
+
 
     @PutMapping("/leaseAgreement/update/{id}")
     public ResponseEntity<LeaseAgreement> updateLeaseAgreement(
