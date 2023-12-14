@@ -338,7 +338,7 @@ public class DeveloperData implements ApplicationRunner {
 
         Damages damages = new Damages(car3, "Lille bule på bagsiden", "2023-06-15", 500.0, leaseAgreement2);
         damageRepo.save(damages);
-        User admin = new User("Admin", "admin@hotmail.dk");
+        User admin = new User("Admin", "admin@hotmail.dk","admin123");
         userRepo.save(admin);
     }
 
