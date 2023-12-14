@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "https://gust9196.github.io/frontend")
+@CrossOrigin(origins = "https://gust9196.github.io")
 public class CustomerController {
 private CustomerService customerService;
 
