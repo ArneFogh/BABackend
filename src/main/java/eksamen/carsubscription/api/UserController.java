@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +27,20 @@ public class UserController {
         List<User> users = userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
+
+    @GetMapping("/user/loginCheck")
+    public ResponseEntity<?> loginUser(@RequestParam String email, @RequestParam String password) {
+        // Antager her, at du har en metode til at hente brugeren baseret på email
+        User user = userService.findByEmail(email);
+
+        if(user != null && user.getPassword().equals(password)) {
+            return ResponseEntity.ok().body(Collections.singletonMap("valid", true));
+        } else {
+            return ResponseEntity.ok().body(Collections.singletonMap("valid", false));
+        }
+    }
+
+
 
     @GetMapping("/user/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {

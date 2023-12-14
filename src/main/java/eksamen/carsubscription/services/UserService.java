@@ -5,8 +5,10 @@ package eksamen.carsubscription.services;
 import eksamen.carsubscription.entity.User;
 import eksamen.carsubscription.repository.IUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +24,22 @@ public class UserService {
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    public User findByEmail(String email) {
+        // Implement your logic to retrieve a user by email
+        return userRepository.findByEmail(email);
+    }
+
+    public ResponseEntity<?> loginUser(String email, String password) {
+        // Find the user by email
+        User user = findByEmail(email);
+
+        if (user != null && user.getPassword().equals(password)) {
+            return ResponseEntity.ok().body(Collections.singletonMap("valid", true));
+        } else {
+            return ResponseEntity.ok().body(Collections.singletonMap("valid", false));
+        }
     }
 
     public Optional<User> getUserById(Long id) {
